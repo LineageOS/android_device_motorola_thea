@@ -1,0 +1,20 @@
+Unified Device Tree for Moto G 2014 LTE (thea)
+=============================================
+
+The Motorola Moto G 2014 LTE (codenamed _"thea"_) is a mid-range smartphone from Motorola mobility.
+It was announced on January 2015.
+
+Basic   | Spec Sheet
+-------:|:-------------------------
+CPU     | Quad-core 1.2 GHz Cortex-A7
+Chipset | Qualcomm MSM8926 Snapdragon 400
+GPU     | Adreno 305
+Memory  | 1GB RAM
+Shipped Android Version | 5.0.2
+Storage | 8/16 GB
+MicroSD | Up to 32 GB
+Battery | Li-Ion 2390mAh battery
+Display | 720 x 1280 pixels, 5.0 inches (~294 ppi pixel density)
+Camera  | 8 MP, 3264 х 2448 pixels, autofocus, LED flash
+
+Copyright 2015 - The CyanogenMod Project.
