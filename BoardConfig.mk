@@ -24,7 +24,7 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/motorola/thea/init/init_thea.c
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := thea,thea_umtsds,XT1078
+TARGET_OTA_ASSERT_DEVICE := thea,thea_umtsds,XT1072,XT1078
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk

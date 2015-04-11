@@ -59,12 +59,23 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     property_set("ro.product.model", "Moto G 2014 LTE");
 
-    if (ISMATCH(radio, "0xC")) {
+    if (ISMATCH(radio, "0x3")) {
+        /* XT1072 */
+        property_set("ro.product.device", "thea");
+        property_set("ro.product.name", "thea_retgb");
+        property_set("ro.build.description", "thea_retgb-user 5.0.2 LXB22.46-28 27 release-keys");
+        property_set("ro.build.fingerprint", "motorola/thea_retgb/thea:5.0.2/LXB22.46-28/27:user/release-keys");
+        property_set("ro.build.product", "thea");
+        property_set("ro.mot.build.customerid", "retgball");
+        property_set("ro.telephony.default_network", "9");
+        property_set("telephony.lteOnGsmDevice", "1");
+        property_set("persist.radio.multisim.config", "");
+    } else if (ISMATCH(radio, "0xC")) {
         /* XT1078 */
         property_set("ro.product.device", "thea_umtsds");
         property_set("ro.product.name", "thea_netbr_ds");
-        property_set("ro.build.description", "thea_retbr_ds-user 5.0.2 LXB22.46-28 25 release-keys");
-        property_set("ro.build.fingerprint", "motorola/thea_retbr_ds/thea_umtsds:5.0.2/LXB22.46-28/25:user/release-keys");
+        property_set("ro.build.description", "thea_retbr_ds-user 5.0.2 LXB22.46-28 27 release-keys");
+        property_set("ro.build.fingerprint", "motorola/thea_retbr_ds/thea_umtsds:5.0.2/LXB22.46-28/27:user/release-keys");
         property_set("ro.build.product", "thea_umtsds");
         property_set("ro.mot.build.customerid", "netbr");
         property_set("ro.telephony.default_network", "9");
@@ -73,6 +84,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("persist.radio.plmn_name_cmp", "1");
         property_set("telephony.lteOnGsmDevice", "1");
     }
+
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
     INFO("Found radio id %s setting build properties for %s device\n", radio, devicename);
