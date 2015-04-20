@@ -307,8 +307,8 @@
 		<ctl name="RDAC3 MUX" value="DEM1" />
 		<ctl name="RDAC4 MUX" value="DEM2" />
 		<ctl name="RDAC5 MUX" value="DEM4" />
-		<ctl name="LINEOUT1 Volume" value="14" />
-		<ctl name="LINEOUT2 Volume" value="14" />
+		<ctl name="LINEOUT1 Volume" value="9" />
+		<ctl name="LINEOUT2 Volume" value="9" />
 	</path>
 
 	<path name="speaker-lite">
@@ -324,8 +324,8 @@
 		<ctl name="RDAC3 MUX" value="DEM1" />
 		<ctl name="RDAC4 MUX" value="DEM2" />
 		<ctl name="RDAC5 MUX" value="DEM4" />
-		<ctl name="LINEOUT1 Volume" value="14" />
-		<ctl name="LINEOUT2 Volume" value="14" />
+		<ctl name="LINEOUT1 Volume" value="9" />
+		<ctl name="LINEOUT2 Volume" value="9" />
 	</path>
 
 	<path name="speaker-bottom">
@@ -334,8 +334,8 @@
 		<ctl name="RX3 MIX1 INP1" value="RX1" />
 		<ctl name="RDAC4 MUX" value="DEM2" />
 		<ctl name="RDAC5 MUX" value="DEM4" />
-		<ctl name="LINEOUT1 Volume" value="14" />
-		<ctl name="LINEOUT2 Volume" value="14" />
+		<ctl name="LINEOUT1 Volume" value="9" />
+		<ctl name="LINEOUT2 Volume" value="9" />
 </path>
 
 	<path name="speaker-mic">
@@ -429,8 +429,8 @@
 		<ctl name="RDAC3 MUX" value="DEM1" />
 		<ctl name="RDAC4 MUX" value="DEM2" />
 		<ctl name="RDAC5 MUX" value="DEM4" />
-		<ctl name="LINEOUT1 Volume" value="14" />
-		<ctl name="LINEOUT2 Volume" value="14" />
+		<ctl name="LINEOUT1 Volume" value="9" />
+		<ctl name="LINEOUT2 Volume" value="9" />
 	</path>
 
 	<path name="voice-speaker-mic">
