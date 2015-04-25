@@ -37,7 +37,8 @@
 
 #include "init_msm.h"
 
-void gsm_properties();
+void gsm_properties(bool msim);
+void cdma_properties(char cdma_sub[], char network[]);
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
@@ -61,53 +62,65 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     if (ISMATCH(radio, "0x3")) {
         /* XT1072 */
-        property_set("ro.product.device", "thea");
-        property_set("ro.product.name", "thea_retgb");
+        gsm_properties(false);
         property_set("ro.build.description", "thea_retgb-user 5.0.2 LXB22.46-28 27 release-keys");
         property_set("ro.build.fingerprint", "motorola/thea_retgb/thea:5.0.2/LXB22.46-28/27:user/release-keys");
         property_set("ro.build.product", "thea");
         property_set("ro.mot.build.customerid", "retgball");
-        property_set("ro.telephony.default_network", "9");
-        property_set("telephony.lteOnGsmDevice", "1");
-        property_set("persist.radio.multisim.config", "");
-    } else if (ISMATCH(radio, "0xC")) {
+        property_set("ro.product.device", "thea");
+        property_set("ro.product.name", "thea_retgb");
+   } else if (ISMATCH(radio, "0xC")) {
         /* XT1078 */
-        property_set("ro.product.device", "thea_umtsds");
-        property_set("ro.product.name", "thea_netbr_ds");
+        gsm_properties(true);
         property_set("ro.build.description", "thea_retbr_ds-user 5.0.2 LXB22.46-28 27 release-keys");
         property_set("ro.build.fingerprint", "motorola/thea_retbr_ds/thea_umtsds:5.0.2/LXB22.46-28/27:user/release-keys");
         property_set("ro.build.product", "thea_umtsds");
         property_set("ro.mot.build.customerid", "netbr");
-        property_set("ro.telephony.default_network", "9");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("persist.radio.plmn_name_cmp", "1");
-        property_set("telephony.lteOnGsmDevice", "1");
+        property_set("ro.product.device", "thea_umtsds");
+        property_set("ro.product.name", "thea_netbr_ds");
     } else if (ISMATCH(radio, "0xD")) {
         /* XT1079 */
-        property_set("DEVICE_PROVISIONED", "1");
-        property_set("ril.subscription.types", "NV,RUIM");
-        property_set("ro.com.android.dataroaming", "false");
-        property_set("ro.com.google.clientidbase", "android-motorola");
-        property_set("ro.com.google.clientidbase.ms", "android-motorola");
-        property_set("ro.com.google.clientidbase.am", "android-motorola");
-        property_set("ro.com.google.clientidbase.gmm", "android-motorola");
-        property_set("ro.com.google.clientidbase.yt", "android-motorola");
-        property_set("ro.product.device", "thea_ds");
-        property_set("ro.product.name", "thea_retcn_ds");
+        cdma_properties(0, 20);
         property_set("ro.build.description", "thea_retcn_ds-user 5.0.2 LXB22.46-28 27 release-keys");
         property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:5.0.2/LXB22.46-28/27:user/release-keys");
         property_set("ro.build.product", "thea_ds");
         property_set("ro.mot.build.customerid", "retcn");
-        property_set("ro.telephony.default_cdma_sub", "0");
-        property_set("ro.telephony.default_network", "20");
-        property_set("persist.radio.multisim.config", "dsds");
-        property_set("persist.radio.dont_use_dsd", "true");
-        property_set("persist.radio.plmn_name_cmp", "1");
-        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("ro.com.android.dataroaming", "false");
+        property_set("ro.product.device", "thea_ds");
+        property_set("ro.product.name", "thea_retcn_ds");
     }
 
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
     INFO("Found radio id %s setting build properties for %s device\n", radio, devicename);
+}
+
+void gsm_properties(bool msim)
+{
+    property_set("persist.radio.multisim.config", "");
+    property_set("ro.telephony.default_network", "9");
+    property_set("telephony.lteOnGsmDevice", "1");
+
+    if (msim) {
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("persist.radio.plmn_name_cmp", "1");
+    }
+}
+
+void cdma_properties(char cdma_sub[], char network[])
+{
+    property_set("DEVICE_PROVISIONED", "1");
+    property_set("persist.radio.dont_use_dsd", "true");
+    property_set("persist.radio.multisim.config", "dsds");
+    property_set("persist.radio.plmn_name_cmp", "1");
+    property_set("ril.subscription.types", "NV,RUIM");
+    property_set("ro.com.google.clientidbase", "android-motorola");
+    property_set("ro.com.google.clientidbase.am", "android-motorola");
+    property_set("ro.com.google.clientidbase.gmm", "android-motorola");
+    property_set("ro.com.google.clientidbase.ms", "android-motorola");
+    property_set("ro.com.google.clientidbase.yt", "android-motorola");
+    property_set("ro.telephony.default_cdma_sub", cdma_sub);
+    property_set("ro.telephony.default_network", network);
+    property_set("telephony.lteOnCdmaDevice", "1");
 }
