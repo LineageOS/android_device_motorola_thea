@@ -429,8 +429,8 @@
 		<ctl name="RDAC3 MUX" value="DEM1" />
 		<ctl name="RDAC4 MUX" value="DEM2" />
 		<ctl name="RDAC5 MUX" value="DEM4" />
-		<ctl name="LINEOUT1 Volume" value="9" />
-		<ctl name="LINEOUT2 Volume" value="9" />
+		<ctl name="LINEOUT1 Volume" value="14" />
+		<ctl name="LINEOUT2 Volume" value="14" />
 	</path>
 
 	<path name="voice-speaker-mic">
