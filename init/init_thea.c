@@ -64,7 +64,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* XT1072 */
         gsm_properties(false);
         property_set("ro.build.description", "thea_retgb-user 5.0.2 LXB22.99-24 15 release-keys");
-        property_set("ro.build.fingerprint", "motorola/thea_retgb/thea:5.0.2/LXB22.99-24/15:user/release-keys);
+        property_set("ro.build.fingerprint", "motorola/thea_retgb/thea:5.0.2/LXB22.99-24/15:user/release-keys");
         property_set("ro.build.product", "thea");
         property_set("ro.mot.build.customerid", "retgball");
         property_set("ro.product.device", "thea");
