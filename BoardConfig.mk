@@ -28,7 +28,7 @@ TARGET_OTA_ASSERT_DEVICE := thea,thea_umtsds,thea_ds,XT1072,XT1078,XT1079
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-TARGET_KERNEL_CONFIG := titan_defconfig
+TARGET_KERNEL_CONFIG := thea_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10444800
