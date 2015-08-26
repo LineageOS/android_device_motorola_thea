@@ -22,6 +22,30 @@
       "revId": "f324865e0b85ad72a86cab29da6d3296ba6fa8a0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_de76723f",
+        "filename": "system.prop",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7230
+      },
+      "writtenOn": "2015-08-26T00:12:12Z",
+      "side": 0,
+      "message": "yes, check device.mk",
+      "parentUuid": "3f1d235d_1e7d0a1c",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "f324865e0b85ad72a86cab29da6d3296ba6fa8a0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
