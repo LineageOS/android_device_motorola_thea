@@ -1,0 +1,4 @@
+# system.prop for thea
+
+# audio
+ro.audio.monitorRotation=1
