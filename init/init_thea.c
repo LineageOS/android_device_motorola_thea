@@ -68,7 +68,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "thea");
         property_set("ro.mot.build.customerid", "retgball");
         property_set("ro.product.device", "thea");
-        property_set("ro.product.name", "thea_retgb");
    } else if (ISMATCH(radio, "0xE")) {
         /* XT1077 */
         cdma_properties("0", "10");
@@ -77,7 +76,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "thea_ds");
         property_set("ro.mot.build.customerid", "retcn");
         property_set("ro.product.device", "thea_ds");
-        property_set("ro.product.name", "thea_retcn_ds");
    } else if (ISMATCH(radio, "0xC")) {
         /* XT1078 */
         gsm_properties(true);
@@ -86,7 +84,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "thea_umtsds");
         property_set("ro.mot.build.customerid", "netbr");
         property_set("ro.product.device", "thea_umtsds");
-        property_set("ro.product.name", "thea_netbr_ds");
     } else if (ISMATCH(radio, "0xD")) {
         /* XT1079 */
         cdma_properties("0", "20");
@@ -96,7 +93,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.com.android.dataroaming", "false");
         property_set("ro.mot.build.customerid", "retcn");
         property_set("ro.product.device", "thea_ds");
-        property_set("ro.product.name", "thea_retcn_ds");
     }
 
     property_get("ro.product.device", device);
