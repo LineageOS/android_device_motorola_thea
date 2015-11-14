@@ -63,32 +63,32 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     if (ISMATCH(radio, "0x3")) {
         /* XT1072 */
         gsm_properties(false);
-        property_set("ro.build.description", "thea_retgb-user 5.0.2 LXB22.99-24.7 15 release-keys");
-        property_set("ro.build.fingerprint", "motorola/thea_retgb/thea:5.0.2/LXB22.99-24.7/5:user/release-keys");
+        property_set("ro.build.description", "thea_retgb-user 5.0.2 LXB22.99-24.12 11 release-keys");
+        property_set("ro.build.fingerprint", "motorola/thea_retgb/thea:5.0.2/LXB22.99-24.12/11:user/release-keys");
         property_set("ro.build.product", "thea");
         property_set("ro.mot.build.customerid", "retgball");
         property_set("ro.product.device", "thea");
    } else if (ISMATCH(radio, "0xE")) {
         /* XT1077 */
         cdma_properties("0", "10");
-        property_set("ro.build.description", "thea_retcn_ds-user 5.0.2 LXB22.99-24.7 15 release-keys");
-        property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:5.0.2/LXB22.99-24.7/5:user/release-keys");
+        property_set("ro.build.description", "thea_retcn_ds-user 5.0.2 LXB22.99-24.12 11 release-keys");
+        property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:5.0.2/LXB22.99-24.12/11:user/release-keys");
         property_set("ro.build.product", "thea_ds");
         property_set("ro.mot.build.customerid", "retcn");
         property_set("ro.product.device", "thea_ds");
    } else if (ISMATCH(radio, "0xC")) {
         /* XT1078 */
         gsm_properties(true);
-        property_set("ro.build.description", "thea_retbr_ds-user 5.0.2 LXB22.99-24.7 15 release-keys");
-        property_set("ro.build.fingerprint", "motorola/thea_retbr_ds/thea_umtsds:5.0.2/LXB22.99-24.7/5:user/release-keys");
+        property_set("ro.build.description", "thea_retbr_ds-user 5.0.2 LXB22.99-24.12 11 release-keys");
+        property_set("ro.build.fingerprint", "motorola/thea_retbr_ds/thea_umtsds:5.0.2/LXB22.99-24.12/11:user/release-keys");
         property_set("ro.build.product", "thea_umtsds");
         property_set("ro.mot.build.customerid", "netbr");
         property_set("ro.product.device", "thea_umtsds");
     } else if (ISMATCH(radio, "0xD")) {
         /* XT1079 */
         cdma_properties("0", "20");
-        property_set("ro.build.description", "thea_retcn_ds-user 5.0.2 LXB22.99-24.7 15 release-keys");
-        property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:5.0.2/LXB22.99-24.7/5:user/release-keys");
+        property_set("ro.build.description", "thea_retcn_ds-user 5.0.2 LXB22.99-24.12 11 release-keys");
+        property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:5.0.2/LXB22.99-24.12/11:user/release-keys");
         property_set("ro.build.product", "thea_ds");
         property_set("ro.com.android.dataroaming", "false");
         property_set("ro.mot.build.customerid", "retcn");
