@@ -68,8 +68,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "thea");
         property_set("ro.mot.build.customerid", "retgball");
         property_set("ro.product.device", "thea");
-   } else if (ISMATCH(radio, "0xE")) {
-        /* XT1077 */
+   } else if (ISMATCH(radio, "0xE") || ISMATCH(radio, "0xD")) {
+        /* XT1077 | XT1079 */
         cdma_properties("0", "10");
         property_set("ro.build.description", "thea_retcn_ds-user 6.0 MPB24.65-10 10 release-keys");
         property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:6.0/MPB24.65-10/10:user/release-keys");
@@ -84,15 +84,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.product", "thea_umtsds");
         property_set("ro.mot.build.customerid", "netbr");
         property_set("ro.product.device", "thea_umtsds");
-    } else if (ISMATCH(radio, "0xD")) {
-        /* XT1079 */
-        cdma_properties("0", "20");
-        property_set("ro.build.description", "thea_retcn_ds-user 6.0 MPB24.65-10 10 release-keys");
-        property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:6.0/MPB24.65-10/10:user/release-keys");
-        property_set("ro.build.product", "thea_ds");
-        property_set("ro.com.android.dataroaming", "false");
-        property_set("ro.mot.build.customerid", "retcn");
-        property_set("ro.product.device", "thea_ds");
     }
 
     property_get("ro.product.device", device);
