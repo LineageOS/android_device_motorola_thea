@@ -82,7 +82,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "thea_retbr_ds-user 6.0 MPB24.65-10 10 release-keys");
         property_set("ro.build.fingerprint", "motorola/thea_retbr_ds/thea_umtsds:6.0/MPB24.65-10/10:user/release-keys");
         property_set("ro.build.product", "thea_umtsds");
-        property_set("ro.mot.build.customerid", "netbr");
+        property_set("ro.mot.build.customerid", "retbr");
         property_set("ro.product.device", "thea_umtsds");
     }
 
