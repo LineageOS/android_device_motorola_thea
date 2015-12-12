@@ -70,7 +70,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.device", "thea");
    } else if (ISMATCH(radio, "0xE") || ISMATCH(radio, "0xD")) {
         /* XT1077 | XT1079 */
-        cdma_properties("0", "10");
+        cdma_properties("0", ISMATCH(radio, "0xE") ? "10" : "20");
         property_set("ro.build.description", "thea_retcn_ds-user 6.0 MPB24.65-10 10 release-keys");
         property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:6.0/MPB24.65-10/10:user/release-keys");
         property_set("ro.build.product", "thea_ds");
