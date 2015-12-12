@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_9fefb7e8",
+        "filename": "init/init_thea.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2015-12-12T06:03:41Z",
+      "side": 1,
+      "message": "Do we really want to block data roaming here?",
+      "revId": "145e6a08329f4199668fb1e1a3b0b6ba4c99b8a2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
