@@ -127,5 +127,6 @@ void cdma_properties(const char *cdma_sub, const char *network)
     property_set("ro.com.google.clientidbase.yt", "android-motorola");
     property_set("ro.telephony.default_cdma_sub", cdma_sub);
     property_set("ro.telephony.default_network", network);
+    property_set("ro.telephony.ril.config", "simactivation");
     property_set("telephony.lteOnCdmaDevice", "1");
 }
