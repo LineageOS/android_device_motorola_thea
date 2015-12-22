@@ -26,9 +26,6 @@ TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_thea.cpp
 # Assert
 TARGET_OTA_ASSERT_DEVICE := thea,thea_umtsds,thea_ds,XT1072,XT1078,XT1079
 
-# Board
-TARGET_BOARD_INFO_FILE := device/motorola/thea/board-info.txt
-
 # Kernel
 TARGET_KERNEL_CONFIG := titan_defconfig
 
