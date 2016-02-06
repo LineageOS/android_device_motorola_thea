@@ -70,7 +70,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.device", "thea");
    } else if (ISMATCH(radio, "0xE")) {
         /* XT1077 */
-        cdma_properties("0", "10");
+        cdma_properties("0", "10,10");
         property_set("ro.build.description", "thea_retcn_ds-user 6.0 MPB24.65-34 31 release-keys");
         property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:6.0/MPB24.65-34/31:user/release-keys");
         property_set("ro.build.product", "thea_ds");
@@ -86,7 +86,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.device", "thea_umtsds");
     } else if (ISMATCH(radio, "0xD")) {
         /* XT1079 */
-        cdma_properties("0", "20");
+        cdma_properties("0", "20,20");
         property_set("ro.build.description", "thea_retcn_ds-user 6.0 MPB24.65-34 31 release-keys");
         property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:6.0/MPB24.65-34/31:user/release-keys");
         property_set("ro.build.product", "thea_ds");
@@ -102,14 +102,16 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 void gsm_properties(bool msim)
 {
     property_set("persist.radio.multisim.config", "");
-    property_set("ro.telephony.default_network", "9");
     property_set("telephony.lteOnGsmDevice", "1");
 
     if (msim) {
+        property_set("ro.telephony.default_network", "9,9");
         property_set("persist.radio.dont_use_dsd", "true");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.radio.plmn_name_cmp", "1");
         property_set("ro.telephony.ril.config", "simactivation");
+    } else {
+        property_set("ro.telephony.default_network", "9");
     }
 }
 
