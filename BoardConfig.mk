@@ -19,9 +19,9 @@
 DEVICE_PATH := device/motorola/thea
 
 # Vendor Unification Init
+TARGET_INIT_VENDOR_LIB := libinit_thea
+TARGET_RECOVERY_DEVICE_MODULES := libinit_thea
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_thea.cpp
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := thea,thea_umtsds,thea_ds,XT1072,XT1078,XT1079
