@@ -42,21 +42,17 @@ void cdma_properties(const char *cdma_sub, const char *network);
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
-    char radio[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
     int rc;
 
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || !ISMATCH(platform, ANDROID_TARGET))
+    std::string platform = property_get("ro.board.platform");
+    if (!ISMATCH(platform.c_str(), ANDROID_TARGET))
         return;
 
-    property_get("ro.boot.radio", radio);
+    std::string radio = property_get("ro.boot.radio");
 
     property_set("ro.product.model", "Moto G 2014 LTE");
 
-    if (ISMATCH(radio, "0x3")) {
+    if (ISMATCH(radio.c_str(), "0x3")) {
         /* XT1072 */
         gsm_properties(false);
         property_set("ro.build.description", "thea_retgb-user 6.0 MPB24.65-34 31 release-keys");
@@ -64,7 +60,7 @@ void vendor_load_properties()
         property_set("ro.build.product", "thea");
         property_set("ro.mot.build.customerid", "retgball");
         property_set("ro.product.device", "thea");
-   } else if (ISMATCH(radio, "0xE")) {
+   } else if (ISMATCH(radio.c_str(), "0xE")) {
         /* XT1077 */
         cdma_properties("0", "10");
         property_set("ro.build.description", "thea_retcn_ds-user 6.0 MPB24.65-34 31 release-keys");
@@ -72,7 +68,7 @@ void vendor_load_properties()
         property_set("ro.build.product", "thea_ds");
         property_set("ro.mot.build.customerid", "retcn");
         property_set("ro.product.device", "thea_ds");
-   } else if (ISMATCH(radio, "0xC")) {
+   } else if (ISMATCH(radio.c_str(), "0xC")) {
         /* XT1078 */
         gsm_properties(true);
         property_set("ro.build.description", "thea_retbr_ds-user 6.0 MPB24.65-34 31 release-keys");
@@ -80,7 +76,7 @@ void vendor_load_properties()
         property_set("ro.build.product", "thea_umtsds");
         property_set("ro.mot.build.customerid", "retbr");
         property_set("ro.product.device", "thea_umtsds");
-    } else if (ISMATCH(radio, "0xD")) {
+    } else if (ISMATCH(radio.c_str(), "0xD")) {
         /* XT1079 */
         cdma_properties("0", "20");
         property_set("ro.build.description", "thea_retcn_ds-user 6.0 MPB24.65-34 31 release-keys");
@@ -90,9 +86,8 @@ void vendor_load_properties()
         property_set("ro.product.device", "thea_ds");
     }
 
-    property_get("ro.product.device", device);
-    strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found radio id %s setting build properties for %s device\n", radio, devicename);
+    std::string device = property_get("ro.product.device");
+    INFO("Found radio id %s setting build properties for %s device\n", radio.c_str(), device.c_str());
 }
 
 void gsm_properties(bool msim)
