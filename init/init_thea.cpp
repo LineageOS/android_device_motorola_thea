@@ -42,17 +42,13 @@ void cdma_properties(const char *cdma_sub, const char *network);
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
-    char radio[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
     int rc;
 
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || !ISMATCH(platform, ANDROID_TARGET))
+    std::string platform = property_get("ro.board.platform");
+    if (!ISMATCH(platform.c_str(), ANDROID_TARGET))
         return;
 
-    property_get("ro.boot.radio", radio);
+    std::string radio = property_get("ro.boot.radio");
 
     property_set("ro.product.model", "Moto G 2014 LTE");
 
@@ -90,9 +86,8 @@ void vendor_load_properties()
         property_set("ro.product.device", "thea_ds");
     }
 
-    property_get("ro.product.device", device);
-    strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found radio id %s setting build properties for %s device\n", radio, devicename);
+    std::string device = property_get("ro.product.device");
+    INFO("Found radio id %s setting build properties for %s device\n", radio, device.c_str());
 }
 
 void gsm_properties(bool msim)
