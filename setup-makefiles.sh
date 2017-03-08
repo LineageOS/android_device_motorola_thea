@@ -22,4 +22,6 @@ export DEVICE=thea
 export DEVICE_COMMON=msm8226-common
 export VENDOR=motorola
 
+export DEVICE_BRINGUP_YEAR=2015
+
 ./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@
